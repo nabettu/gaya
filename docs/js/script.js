@@ -9824,13 +9824,17 @@ var _jquery2 = _interopRequireDefault(_jquery);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var $buttons = (0, _jquery2.default)(".buttons button");
-$buttons.on("click", function (e) {
-    var $btn = (0, _jquery2.default)(e.target);
-    console.log();
+var audios = [];
+_jquery2.default.each($buttons, function (index, dom) {
+    var $btn = (0, _jquery2.default)(dom);
+    audios[index] = new Audio($btn.attr("data-src"));
+    audios[index].autoplay = false;
 
-    var audio = new Audio($btn.attr("data-src"));
-    audio.play();
+    $btn.on("click", function (e) {
+        audios[index].play();
+    });
 });
+
 var $win = (0, _jquery2.default)(window);
 var vclass = "vertical";
 $win.on("resize", function () {

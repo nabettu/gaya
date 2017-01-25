@@ -1,13 +1,17 @@
 import $ from 'jquery';
 
 const $buttons = $(".buttons button");
-$buttons.on("click", (e) => {
-    const $btn = $(e.target);
-    console.log();
+let audios = [];
+$.each($buttons,(index,dom)=>{
+  const $btn = $(dom);
+  audios[index] = new Audio($btn.attr("data-src"));
+  audios[index].autoplay = false;
 
-    const audio = new Audio($btn.attr("data-src"));
-    audio.play();
+  $btn.on("click", (e) => {
+    audios[index].play();
+  })
 })
+
 const $win = $(window);
 const vclass = "vertical"
 $win.on("resize", () => {
