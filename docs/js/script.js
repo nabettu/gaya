@@ -9817,42 +9817,28 @@ return jQuery;
 },{}],2:[function(require,module,exports){
 "use strict";
 
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var Sample = function Sample() {
-    var opts = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-
-    _classCallCheck(this, Sample);
-
-    this.name = opts.name;
-};
-
-exports.default = Sample;
-;
-
-},{}],3:[function(require,module,exports){
-'use strict';
-
-var _Sample = require('./lib/Sample');
-
-var _Sample2 = _interopRequireDefault(_Sample);
-
-var _jquery = require('jquery');
+var _jquery = require("jquery");
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var sample = new _Sample2.default({
-    name: 'world'
+var $buttons = (0, _jquery2.default)(".buttons button");
+$buttons.on("click", function (e) {
+    var $btn = (0, _jquery2.default)(e.target);
+    console.log();
+
+    var audio = new Audio($btn.attr("data-src"));
+    audio.play();
+});
+var $win = (0, _jquery2.default)(window);
+var vclass = "vertical";
+$win.on("resize", function () {
+    if ($win.height() > $win.width) {
+        (0, _jquery2.default)(".wrapper").addClass(vclass);
+    } else {
+        (0, _jquery2.default)(".wrapper").removeClass(vclass);
+    }
 });
 
-(0, _jquery2.default)('.wrapper').on('click', function () {
-    console.log('hello, ' + sample.name + '.');
-});
-
-},{"./lib/Sample":2,"jquery":1}]},{},[3]);
+},{"jquery":1}]},{},[2]);
