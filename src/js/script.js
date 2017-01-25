@@ -11,9 +11,9 @@ $buttons.on("click", (e) => {
 const $win = $(window);
 const vclass = "vertical"
 $win.on("resize", () => {
-    if ($win.height() > $win.width) {
+    if ($win.height() > $win.width()) {
         $(".wrapper").addClass(vclass);
     } else {
         $(".wrapper").removeClass(vclass);
     }
-})
+}).trigger("resize");

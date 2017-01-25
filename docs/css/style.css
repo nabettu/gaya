@@ -60,15 +60,16 @@ h1 {
   text-align: center; }
 
 .vertical button {
-  width: 22vh;
-  height: 22vh; }
+  width: 40vw;
+  height: 40vw;
+  font-size: 10vw; }
 
 button {
   position: relative;
-  width: 22vh;
-  height: 22vh;
-  margin: 1vh;
-  font-size: 5vh;
+  width: 22vw;
+  height: 22vw;
+  margin: 1vw;
+  font-size: 5vw;
   vertical-align: middle;
   background-color: transparent;
   border: none;
@@ -88,4 +89,4 @@ button {
 
 a {
   display: block;
-  margin-top: 10vh; }
+  margin-top: 10vw; }

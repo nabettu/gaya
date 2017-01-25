@@ -9834,11 +9834,11 @@ $buttons.on("click", function (e) {
 var $win = (0, _jquery2.default)(window);
 var vclass = "vertical";
 $win.on("resize", function () {
-    if ($win.height() > $win.width) {
+    if ($win.height() > $win.width()) {
         (0, _jquery2.default)(".wrapper").addClass(vclass);
     } else {
         (0, _jquery2.default)(".wrapper").removeClass(vclass);
     }
-});
+}).trigger("resize");
 
 },{"jquery":1}]},{},[2]);
